@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Checkbox } from "@progress/kendo-react-inputs";
+import styles from "./tasklist.module.scss";
 
 interface Task {
   id: string;
@@ -29,11 +30,12 @@ export default function TaskList() {
   }
 
   return (
-    <ul>
+    <ul className={styles.taskList}>
       {taskList.map((task) => (
         <li key={task.id}>
           <Checkbox
             label={task.title}
+            labelClassName={task.completed ? styles.completedItem : ""}
             checked={task.completed}
             onChange={(event) => onCompletionChange(event, task.id)}
           />

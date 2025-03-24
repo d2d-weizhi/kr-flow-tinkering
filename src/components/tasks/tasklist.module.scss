@@ -1,0 +1,15 @@
+.taskList {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    padding: 10px;
+    @apply text-xl;
+    border-bottom: 1px solid #eee;
+  }
+
+  .completedItem {
+    text-decoration: line-through;
+    color: gray;
+  }
+}
